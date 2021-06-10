@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="get()">
+     <p id="savedText"> </p> 
+     <p id="openedText"> </p> 
+    <input type="text" id="input"  onkeyup="check()" /> 
+    <button onclick="save()"> SAVE </button> 
+    <button id="exit" onclick="exit()">Refresh Page</button>
+</body>
+<script>
+    var storedltem = localStorage.getItem("storedItem");
+ 
+    var flag = false;
+
+    function save(){
+    
+        var Item = document.getElementById("input").value;
+        localStorage.setItem("storedItem", Item);
+        document.getElementById("savedText").innerHTML = Item + " SAVED";
+
+        flag = true;
+    }
+
+       function get(){
+            localStorage.getItem("storedItem");
+            document.getElementById("openedText").innerHTML = storedltem + " OPENED"; 
+       }
+
+     function check(){
+         console.log("line no. 37");
+         flag = false;
+     }
+
+     function exit(){
+         
+        if( flag === false){
+
+            alert("Data is not Saved");
+        
+        }
+
+        location.reload();
+     }
+       
+</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>
+        Remove duplicate values from the list using Set
+	</title>
+</head>
+
+<body style="text-align:center; background-color: rgb(195, 248, 248); "
+	id="body">
+	<p id="Array"
+	style="font-size: 15px;
+			font-weight: bold;
+            margin-top: 10%;">
+	</p>
+	<button onclick="Set_Fun()">
+		click here
+	</button>
+	<p id="Set"
+	style="color:green;
+			font-size: 20px;
+			font-weight: bold;">
+	</p>
+	<script>
+		var up = document.getElementById('Array');
+		var down = document.getElementById('Set');
+		var A = [1, 1, 2, 2, 2, 2, 5, 5];
+		
+		up.innerHTML = "Click on the button to convert the array to set.<br>" + "Array - [" + A + "]";
+
+		function Set_Fun() {
+			var set = new Set(A);
+			down.innerHTML = JSON.stringify([...set]);
+		}
+	</script>
+</body>
+
+</html>
